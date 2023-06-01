@@ -23,6 +23,10 @@ def connect_mysql():
     )
     return conn
 
+@app.route('/',methods=['POST','GET'])
+def main():
+    return "Hello World!"
+
 @app.route('/myapp/user/register',methods=['POST','GET'])
 def register():
     if request.method == 'POST':
