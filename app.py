@@ -8,13 +8,11 @@ app = Flask(__name__)
 
 cors = CORS(app)
 
-app.config['MYSQL_HOST'] = os.getenv('MYSQL_HOST')  # MySQL cluster host address
-app.config['MYSQL_PORT'] = os.getenv('MYSQL_PORT')
-app.config['MYSQL_USER'] = os.getenv('MYSQL_USER')  # MySQL username
-app.config['MYSQL_PASSWORD'] = os.getenv('MYSQL_PASSWORD')  # MySQL password
-app.config['MYSQL_DB'] = os.getenv('MYSQL_DB') 
-
-print(os.environ)
+app.config['MYSQL_HOST'] = 'mysql'  # MySQL cluster host address
+app.config['MYSQL_PORT'] = 3306
+app.config['MYSQL_USER'] = 'vehicle_maintenance'  # MySQL username
+app.config['MYSQL_PASSWORD'] = 'vehicle_maintenance_123'  # MySQL password
+app.config['MYSQL_DB'] = 'VehicleMaintenance' 
 
 def connect_mysql():
     conn = MySQLdb.connect(
