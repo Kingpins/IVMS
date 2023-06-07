@@ -258,7 +258,7 @@ def getUserData():
 
     # check services findings
 
-    outData['outFindings'] = checkServiceFindings(outData)
+    outData['outFindings'] = checkServiceFindings(outData,True)
     
     return {'result':outData}
 
