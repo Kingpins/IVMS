@@ -133,7 +133,7 @@ def checkServiceFindings(outData,flag):
     stdGearPressure = outData['dataStdThreshold']['AirBags']
     if latest_gear_pressure == stdGearPressure:
         outFindings['AirBags_alarm'] = False
-        sent_notification(userData,'Air Bags Servicing',current_date)
+        sent_notification(userData,'Air Bags',current_date)
     else:
         outFindings['AirBags_alarm'] = True
     return outFindings
@@ -260,7 +260,7 @@ def getUserData():
 
     outData['outFindings'] = checkServiceFindings(outData,True)
     
-    return {'result':outData}
+    return outData
 
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', port=9090)
